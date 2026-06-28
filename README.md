@@ -1,37 +1,25 @@
-# Sunway Multi-page Guest Guide
+# Sunway expanded rentals and activities guide v2
 
-This version uses subpages.
+New subpages added:
 
-## Structure
+- car-moto-rentals/
+- boat-rentals/
+- water-sports/
+- day-trips/
 
-- `index.html` → homepage
-- `food/index.html` → food guide
-- `drinks/index.html` → drinks guide
-- `nightlife/index.html` → nightlife guide
-- `activities/index.html` → boat rentals, activities, partners
-- `transport/index.html` → buses, taxis, nearby places
-- `request/index.html` → guest request form
-- `info/index.html` → emergency and useful info
-- `assets/` → images
-- `style.css`
-- `script.js`
+Existing pages kept:
 
-## GitHub Pages
+- food/
+- drinks/
+- nightlife/
+- activities/
+- transport/
+- info/
+- request/
 
-Upload everything to your repo and enable:
-
-Settings → Pages → Deploy from branch → main → /root
-
-Your links will look like:
-
-- https://NikosMortopoulos.github.io/sunway-guide/
-- https://NikosMortopoulos.github.io/sunway-guide/food/
-- https://NikosMortopoulos.github.io/sunway-guide/request/
-
-## Formspree setup
-
-In `request/index.html`, replace:
-
-https://formspree.io/f/YOUR_FORM_ID
-
-with your real Formspree endpoint.
+Before publishing to hotel guests:
+- Verify phone numbers.
+- Verify seasonal opening hours.
+- Decide which providers are official Sunway partners.
+- Add exact commission/discount/promo notes only if agreed with the business.
+- Replace generic photos with your own approved photos.
