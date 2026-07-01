@@ -1,25 +1,17 @@
-# Sunway expanded rentals and activities guide v2
+# Sunway Deep Local Guide v3
 
-New subpages added:
-
-- car-moto-rentals/
+Expanded pages:
+- vehicle-rentals/
 - boat-rentals/
 - water-sports/
-- day-trips/
+- move/
+- pharmacies/
+- supermarkets/
+- banks-atms/
+- health/
+- nature-activities/
 
-Existing pages kept:
-
-- food/
-- drinks/
-- nightlife/
-- activities/
-- transport/
-- info/
-- request/
-
-Before publishing to hotel guests:
-- Verify phone numbers.
-- Verify seasonal opening hours.
-- Decide which providers are official Sunway partners.
-- Add exact commission/discount/promo notes only if agreed with the business.
-- Replace generic photos with your own approved photos.
+Before publishing:
+- Call each provider and verify phone/opening hours.
+- Replace search/marketplace cards with official partners where possible.
+- Replace Formspree placeholder in request/index.html.
