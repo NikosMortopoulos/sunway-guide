@@ -1,8 +1,28 @@
-# Sunway Featured Home Full Guide v4
+# Sunway Customer-Ready Guest Guide
 
-Homepage has a section for every category with 2-3 featured cards.
-These cards can be best picks or paid partner placements.
-Full lists are inside the subpages.
+Final customer-ready static website.
 
-Replace Formspree placeholder in request/index.html if needed.
-Verify all phones/hours before publishing.
+Main pages:
+- index.html
+- sunway-beach-bar/
+- playa-by-sunway/
+- food/
+- drinks/
+- nightlife/
+- vehicle-rentals/
+- boat-rentals/
+- water-sports/
+- move/
+- pharmacies/
+- supermarkets/
+- banks-atms/
+- health/
+- nature-activities/
+- request/
+
+Upload all files and folders to the GitHub repository root.
+
+To update:
+git add .
+git commit -m "update final customer-ready guide"
+git push
