@@ -1,17 +1,8 @@
-# Sunway Deep Local Guide v3
+# Sunway Featured Home Full Guide v4
 
-Expanded pages:
-- vehicle-rentals/
-- boat-rentals/
-- water-sports/
-- move/
-- pharmacies/
-- supermarkets/
-- banks-atms/
-- health/
-- nature-activities/
+Homepage has a section for every category with 2-3 featured cards.
+These cards can be best picks or paid partner placements.
+Full lists are inside the subpages.
 
-Before publishing:
-- Call each provider and verify phone/opening hours.
-- Replace search/marketplace cards with official partners where possible.
-- Replace Formspree placeholder in request/index.html.
+Replace Formspree placeholder in request/index.html if needed.
+Verify all phones/hours before publishing.
