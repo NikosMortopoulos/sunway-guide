@@ -1,69 +1,103 @@
 
-const menuButton=document.getElementById("menuButton");const navLinks=document.getElementById("navLinks");
-if(menuButton&&navLinks){menuButton.addEventListener("click",()=>navLinks.classList.toggle("open"));navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>navLinks.classList.remove("open")))}
-const requestButtons=document.querySelectorAll(".request-buttons button");const requestTypeInput=document.getElementById("requestTypeInput");const requestTypeVisible=document.getElementById("requestTypeVisible");const guestForm=document.getElementById("guestRequestForm");
-if(requestButtons&&requestTypeInput&&requestTypeVisible&&guestForm){requestButtons.forEach(button=>{button.addEventListener("click",()=>{const type=button.dataset.request;requestButtons.forEach(btn=>btn.classList.remove("active"));button.classList.add("active");requestTypeInput.value=type;requestTypeVisible.value=type;guestForm.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>guestForm.querySelector('input[name="room_number"]').focus(),350)})})}
+// Mobile menu
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
 
+if (menuButton && navLinks) {
+  menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
 
-
-// Submit guest request in the background and show a thank-you popup
-const requestSuccessModal = document.getElementById("requestSuccessModal");
-const modalCloseButton = document.querySelector(".request-modal-close");
-const modalOkButton = document.querySelector(".request-modal-ok");
-
-function openRequestModal() {
-  if (!requestSuccessModal) return;
-  requestSuccessModal.classList.add("open");
-  requestSuccessModal.setAttribute("aria-hidden", "false");
-}
-
-function closeRequestModal() {
-  if (!requestSuccessModal) return;
-  requestSuccessModal.classList.remove("open");
-  requestSuccessModal.setAttribute("aria-hidden", "true");
-}
-
-if (modalCloseButton) modalCloseButton.addEventListener("click", closeRequestModal);
-if (modalOkButton) modalOkButton.addEventListener("click", closeRequestModal);
-
-if (requestSuccessModal) {
-  requestSuccessModal.addEventListener("click", (event) => {
-    if (event.target === requestSuccessModal) closeRequestModal();
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
   });
 }
 
-if (guestForm) {
-  guestForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
+// Guest request buttons + popup submit
+document.addEventListener("DOMContentLoaded", () => {
+  const requestButtons = document.querySelectorAll(".request-buttons button");
+  const requestTypeInput = document.getElementById("requestTypeInput");
+  const requestTypeVisible = document.getElementById("requestTypeVisible");
+  const guestForm = document.getElementById("guestRequestForm");
 
-    const formAction = guestForm.getAttribute("action");
-    const formData = new FormData(guestForm);
+  const requestSuccessModal = document.getElementById("requestSuccessModal");
+  const modalCloseButton = document.querySelector(".request-modal-close");
+  const modalOkButton = document.querySelector(".request-modal-ok");
 
-    if (!formAction || formAction.includes("YOUR_FORM_ID")) {
-      alert("The request form is not connected yet. Please ask reception.");
-      return;
-    }
+  function openRequestModal() {
+    if (!requestSuccessModal) return;
+    requestSuccessModal.classList.add("open");
+    requestSuccessModal.setAttribute("aria-hidden", "false");
+  }
 
-    try {
-      guestForm.classList.add("is-sending");
+  function closeRequestModal() {
+    if (!requestSuccessModal) return;
+    requestSuccessModal.classList.remove("open");
+    requestSuccessModal.setAttribute("aria-hidden", "true");
+  }
 
-      await fetch(formAction, {
-        method: "POST",
-        body: formData,
-        mode: "no-cors"
-      });
+  if (modalCloseButton) modalCloseButton.addEventListener("click", closeRequestModal);
+  if (modalOkButton) modalOkButton.addEventListener("click", closeRequestModal);
 
-      guestForm.reset();
+  if (requestSuccessModal) {
+    requestSuccessModal.addEventListener("click", (event) => {
+      if (event.target === requestSuccessModal) closeRequestModal();
+    });
+  }
 
-      if (requestTypeInput) requestTypeInput.value = "general help";
-      if (requestTypeVisible) requestTypeVisible.value = "general help";
+  requestButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const type = button.dataset.request || "general help";
+
       requestButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
 
-      openRequestModal();
-    } catch (error) {
-      alert("Sorry, something went wrong. Please call or visit reception.");
-    } finally {
-      guestForm.classList.remove("is-sending");
-    }
+      if (requestTypeInput) requestTypeInput.value = type;
+      if (requestTypeVisible) requestTypeVisible.value = type;
+
+      if (guestForm) {
+        guestForm.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => {
+          const roomInput = guestForm.querySelector('input[name="room_number"]');
+          if (roomInput) roomInput.focus();
+        }, 350);
+      }
+    });
   });
-}
+
+  if (guestForm) {
+    guestForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const formAction = guestForm.getAttribute("action");
+      const formData = new FormData(guestForm);
+
+      if (!formAction || formAction.includes("YOUR_FORM_ID") || formAction.includes("YOUR_SCRIPT_ID")) {
+        alert("The request form is not connected yet. Please ask reception.");
+        return;
+      }
+
+      try {
+        guestForm.classList.add("is-sending");
+
+        await fetch(formAction, {
+          method: "POST",
+          body: formData,
+          mode: "no-cors"
+        });
+
+        guestForm.reset();
+
+        if (requestTypeInput) requestTypeInput.value = "general help";
+        if (requestTypeVisible) requestTypeVisible.value = "general help";
+        requestButtons.forEach(btn => btn.classList.remove("active"));
+
+        openRequestModal();
+      } catch (error) {
+        alert("Sorry, something went wrong. Please call or visit reception.");
+      } finally {
+        guestForm.classList.remove("is-sending");
+      }
+    });
+  }
+});
