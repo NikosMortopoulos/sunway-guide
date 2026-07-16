@@ -1,28 +1,12 @@
-# Sunway Customer-Ready Guest Guide
+# Sunway Customer-Ready Guest Guide v7
 
-Final customer-ready static website.
+Customer-ready static website.
 
-Main pages:
-- index.html
-- sunway-beach-bar/
-- playa-by-sunway/
-- food/
-- drinks/
-- nightlife/
-- vehicle-rentals/
-- boat-rentals/
-- water-sports/
-- move/
-- pharmacies/
-- supermarkets/
-- banks-atms/
-- health/
-- nature-activities/
-- request/
+Added:
+- beach-bars/ page
+- homepage beach bar section
+- Sunway Beach Bar and Playa by Sunway top section
+- image display fixes so Playa is not cropped and the beach bar image is shown cleanly
 
-Upload all files and folders to the GitHub repository root.
-
-To update:
-git add .
-git commit -m "update final customer-ready guide"
-git push
+Important:
+For third-party businesses, images should be official/approved images from the business or images you have permission to use.

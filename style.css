@@ -40,3 +40,36 @@
 .place-card-content p {
   line-height: 1.55;
 }
+
+/* v7 store-image fixes */
+.store-card.beach-photo,
+.store-card.playa-photo {
+  background: linear-gradient(135deg, #fff4dc, #ead4b0);
+}
+
+.store-card.beach-photo img {
+  object-fit: contain !important;
+  background: #1f1712;
+  height: 460px !important;
+  padding: 10px;
+}
+
+.store-card.playa-photo img {
+  object-fit: contain !important;
+  background: #050505;
+  height: 520px !important;
+  padding: 10px;
+}
+
+.official-photo-note {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .store-card.beach-photo img {
+    height: 340px !important;
+  }
+  .store-card.playa-photo img {
+    height: 430px !important;
+  }
+}
