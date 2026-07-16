@@ -73,3 +73,38 @@
     height: 430px !important;
   }
 }
+
+/* v9 visibility fix for homepage / nav */
+.topbar{
+  color: var(--gold) !important;
+}
+.topmark strong{
+  color: var(--gold) !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,.35);
+}
+.topmark span{
+  color: #ffb35a !important;
+}
+.nav-links a{
+  color: var(--gold) !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,.45);
+  font-weight: 700;
+}
+.sun-button,
+.menu-button{
+  color: var(--gold) !important;
+  border-color: rgba(238,164,60,.65) !important;
+  background: rgba(75,37,24,.35) !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,.35);
+}
+.hero-buttons a{
+  color: var(--orange) !important;
+  background: rgba(255,240,201,.96) !important;
+  text-shadow: none !important;
+}
+.hero-buttons a:nth-child(even){
+  color: var(--gold) !important;
+}
+.hero-buttons a:hover{
+  transform: translateY(-1px);
+}
