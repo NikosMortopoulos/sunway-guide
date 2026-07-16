@@ -108,3 +108,68 @@
 .hero-buttons a:hover{
   transform: translateY(-1px);
 }
+
+/* v10 request success popup */
+.request-modal{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(18,10,7,.64);
+  backdrop-filter:blur(8px);
+}
+.request-modal.open{
+  display:flex;
+}
+.request-modal-card{
+  width:min(520px,92vw);
+  border-radius:24px;
+  padding:34px;
+  text-align:center;
+  color:var(--ink);
+  background:linear-gradient(135deg,rgba(255,240,205,.98),rgba(240,200,130,.96));
+  border:1px solid rgba(75,37,24,.20);
+  box-shadow:0 28px 70px rgba(0,0,0,.35);
+  position:relative;
+}
+.request-modal-card h2{
+  color:var(--orange);
+  margin:6px 0 10px;
+}
+.request-modal-card p{
+  font-size:1.05rem;
+  line-height:1.55;
+}
+.request-modal-close{
+  position:absolute;
+  top:12px;
+  right:14px;
+  width:36px;
+  height:36px;
+  border-radius:999px;
+  border:1px solid rgba(75,37,24,.18);
+  background:rgba(255,255,255,.35);
+  color:var(--ink);
+  font-size:1.5rem;
+  line-height:1;
+  cursor:pointer;
+}
+.request-modal-ok{
+  margin-top:22px;
+  min-width:130px;
+  border:0;
+  border-radius:999px;
+  padding:13px 22px;
+  background:var(--deep);
+  color:var(--cream);
+  font-family:"Space Mono",monospace;
+  font-weight:700;
+  cursor:pointer;
+}
+.guest-form.is-sending{
+  opacity:.72;
+  pointer-events:none;
+}
