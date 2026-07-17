@@ -101,3 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const posterMenu = document.getElementById("menuButton");
+  const posterLinks = document.getElementById("navLinks");
+  if (posterMenu && posterLinks) {
+    posterMenu.addEventListener("click", () => posterLinks.classList.toggle("open"));
+  }
+});
