@@ -109,3 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
     posterMenu.addEventListener("click", () => posterLinks.classList.toggle("open"));
   }
 });
+
+// poster-menu-fix-v14
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuButton");
+  const links = document.getElementById("navLinks");
+  if (menuBtn && links) {
+    menuBtn.addEventListener("click", () => links.classList.toggle("open"));
+    links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+  }
+});
