@@ -1,0 +1,6 @@
+Removed/replaced internal-looking text occurrences:
+- SOURCES_NOTES.md: partner businesses
+- SOURCES_NOTES.md: placeholder
+- move/index.html: admin
+- food/index.html: Use these as starter picks; replace with approved/partner businesses.
+- request/index.html: placeholder
