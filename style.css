@@ -580,3 +580,49 @@ button,
   .nav-links{grid-template-columns:1fr!important}
   .request-buttons,.actions{grid-template-columns:1fr!important}
 }
+
+/* v21: bigger mobile UI + Sunway/Playa buttons */
+.quick-mobile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.quick-mobile-grid a{min-height:58px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 14px;border-radius:18px;background:var(--deep);color:var(--cream);text-decoration:none;font-weight:800;text-transform:uppercase;letter-spacing:.04em;box-shadow:var(--shadow)}
+
+@media(max-width:760px){
+  body{font-size:17px!important}
+  .topbar{padding:12px 14px!important}
+  .topmark strong{font-size:.95rem!important}.topmark span{font-size:.72rem!important}
+  .menu-button{min-width:92px!important;min-height:48px!important;font-size:.86rem!important;font-weight:800!important}
+  .nav-links{top:68px!important;gap:10px!important;padding:12px!important}
+  .nav-links a{min-height:54px!important;font-size:.86rem!important;line-height:1.18!important;font-weight:800!important}
+  .hero{min-height:auto!important}
+  .hero-content{min-height:auto!important;padding:90px 16px 26px!important;justify-content:flex-start!important}
+  .hero h1{font-size:clamp(3.2rem,17.5vw,5.5rem)!important;line-height:.78!important;margin-top:8px!important}
+  .hero-text{font-size:1rem!important;line-height:1.52!important;margin-top:16px!important}
+  .hero-content .tiny,.tiny{font-size:.78rem!important;letter-spacing:.13em!important}
+  .hero-buttons,.hero-buttons.all-subpages{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;overflow:visible!important;margin:18px 0 0!important;padding:0!important;gap:10px!important}
+  .hero-buttons a,.hero-buttons.all-subpages a{width:100%!important;min-width:0!important;min-height:58px!important;padding:13px 10px!important;border-radius:16px!important;font-size:.86rem!important;line-height:1.15!important;font-weight:900!important;letter-spacing:.02em!important;white-space:normal!important}
+  .quick-mobile-grid{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .quick-mobile-grid a{min-height:64px!important;font-size:.9rem!important;line-height:1.15!important;border-radius:16px!important}
+  .page{padding:14px 12px 96px!important}
+  .home-category,.category-section,.stores-showcase,.request-section{padding:18px!important;border-radius:18px!important}
+  h2{font-size:clamp(2.35rem,12vw,3.6rem)!important}
+  h3{font-size:1.9rem!important;line-height:.95!important}
+  .home-category-head p,.category-header p,.featured-body p,.place-card-content p,.store-card-body p{font-size:1rem!important;line-height:1.5!important}
+  .featured-card img,.place-card img{height:205px!important;min-height:205px!important}
+  .featured-body,.place-card-content,.store-card-body{padding:18px!important}
+  .badge,.tags span,.meta{font-size:.78rem!important}
+  .actions{grid-template-columns:1fr!important;gap:10px!important}
+  .actions a,.featured-body a,.home-section-link{min-height:54px!important;font-size:.86rem!important;font-weight:900!important}
+  .page-hero-content{padding:104px 16px 42px!important}
+  .page-hero-content h1{font-size:clamp(3.4rem,18vw,5.8rem)!important}
+  .page-hero-content p{font-size:1rem!important}
+  .request-buttons{grid-template-columns:1fr!important;gap:10px!important}
+  .request-buttons button{min-height:58px!important;font-size:.92rem!important;font-weight:900!important}
+  .guest-form label{font-size:.9rem!important}
+  .guest-form input,.guest-form textarea{min-height:52px!important;font-size:17px!important}
+  .submit-btn{min-height:58px!important;font-size:.96rem!important;font-weight:900!important}
+  .mobile-bottom-nav{grid-template-columns:repeat(5,1fr)!important;gap:6px!important}
+  .mobile-bottom-nav a{min-height:48px!important;font-size:.70rem!important;line-height:1.05!important;padding:6px 4px!important;text-align:center!important}
+}
+@media(max-width:390px){
+  .hero-buttons,.hero-buttons.all-subpages,.quick-mobile-grid{grid-template-columns:1fr!important}
+  .hero h1{font-size:clamp(3rem,16vw,4.8rem)!important}
+}
